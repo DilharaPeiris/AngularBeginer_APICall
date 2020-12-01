@@ -1,0 +1,25 @@
+<div id="dashboard-component">
+    <div>
+        <h1><label for="search-box">Dashboard</label> </h1>
+        <!--<input #searchBox id="search-box" (input)="search(searchBox.value)">-->
+         
+    </div>
+    <div>
+        <button (click)="search()">Search
+        </button>
+    </div>
+   <!--
+<div>
+        <ul class="search-result">
+            <li *ngFor="let country of countrynames$ | async">
+                <a routerLink="/country/{{country.id}}">
+                    {{country.name}}
+                </a>
+            </li>
+        </ul>
+    </div>
+   -->
+    
+</div>
+
+<router-outlet></router-outlet>
