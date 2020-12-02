@@ -15,14 +15,19 @@ import { Employee } from 'src/models/Employee';
 })
 export class DashboardComponent implements OnInit {
   //employees$: Observable<Employee[]>;
+  employees: Employee[] = [];
   private searchTerms = new Subject<string>();
 
   constructor(private dashboardServices: DashBoardServices) { }
 
   search(): void {
     
-     this.dashboardServices.getEmployeeDetails().subscribe(x=>{
-       console.log(x);
+     this.dashboardServices.getEmployeeDetails().subscribe(employees=>{
+       this.employees = employees;
+       employees.forEach(element => {
+          console.log(element);
+       });
+       
      })
   }
 
