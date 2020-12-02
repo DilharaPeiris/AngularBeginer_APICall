@@ -33,5 +33,19 @@ export class DashBoardServices{
         return this._http.get<Employee[]>(`${this.getPath()}employees`,{headers:this.createHeader()});
     }
 
+    postEmployeeDetails(body:Employee):Observable<Employee>{
+        return this._http.post<Employee>(`${this.getPath()}employees`,body,{headers:this.createHeader()});
+    }
+
+    getEmployeeDetailsbyIndex(employid:string):Observable<Employee>{
+        return this._http.get<Employee>(`${this.getPath()}employees/?id=${employid}`, {headers: this.createHeader()});
+    }
+
+    getEmployeeDetailsbyIndexandName(employid:string,name:string):Observable<Employee>{
+        return this._http.get<Employee>(`${this.getPath()}employees/?id=${employid}&name=${name}`, {headers: this.createHeader()});
+    }
+
+    
+
 }
 
